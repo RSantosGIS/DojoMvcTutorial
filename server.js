@@ -9,11 +9,15 @@ router.use(function (req, res, next) {
 });
 
 router.get("/", function(req, res) {
-    res.sendFile(path+"index.html");
+    res.sendFile(path+"index2.html");
 });
 
 router.get("/about", function(req, res) {
     res.sendFile(path+"about.html");
+});
+
+router.get("/index", function(req, res) {
+    res.sendFile(path+"index.html");
 });
 
 app.use("/", router);

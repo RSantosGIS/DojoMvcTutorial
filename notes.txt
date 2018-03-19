@@ -1,0 +1,4 @@
+- data-dojo-type is used to define the type of widget and use custom widget types
+- class "claro" on the body tells the parser/css what theme to use when rendering widgets
+- don't have to use a div for dojo widgets - could use anything else like input or button.  doesn't affect anything
+- 
