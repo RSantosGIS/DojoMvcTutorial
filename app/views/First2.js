@@ -28,6 +28,7 @@ define([
         _WidgetsInTemplateMixin,], {
             templateString: template,
             title: 'default title',
+            widgetNumber: '',
 
             postCreate: function() {
                 //this binds the data element that was passed in to the dataNode
@@ -35,7 +36,7 @@ define([
             },
 
             _onClick: function(event) {
-                console.log('I was clicked');
+                console.log('Widget: ' + this.widgetNumber+ ' was clicked');
             }
         });
 });
