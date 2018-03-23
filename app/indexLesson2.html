@@ -36,16 +36,14 @@
     </head>
     <body class='claro'>
         <div id='mainContainer' data-dojo-type='dijit/layout/BorderContainer'>
-            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top', splitter: true">
                 Top
             </div>
             <!-- container panes provide a border buffer that you may or may not want.  you can put the region on any element -->
-            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'left'">
-                <div data-dojo-type="dijit/layout/AccordionContainer">
-                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title: "Top"'>top</div>
-                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title: "Mid"'>middle</div>
-                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title: "Bottom"'>bottom</div>
-                </div>
+            <div data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="region:'left', splitter: true">
+                <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title: "Top"'>top</div>
+                <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title: "Mid"'>middle</div>
+                <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title: "Bottom"'>bottom</div>
             </div>
             <div data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region:'center'">
                 <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title: "Left"'>
