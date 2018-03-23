@@ -31,7 +31,9 @@
         <script src="dojo/dojo.js"></script>
         <script>
             //this gets rid of parser load warnings
-            require(['dojo/parser', 'views/First2']);
+            require(['dojo/parser', 'views/First2',
+            'dijit/layout/BorderContainer','dijit/layout/ContentPane', 'dijit/layout/AccordionContainer','dijit/layout/TabContainer',
+            'dijit/form/Form', 'dijit/form/TextBox', 'views/ValidationForm']);
         </script>
     </head>
     <body class='claro'>
@@ -51,7 +53,9 @@
                     <div data-dojo-type='views/First2' data-dojo-props='title: "My title", widgetNumber: "1"'></div>
                     <div data-dojo-type='views/First2' data-dojo-props='title: "My other title", widgetNumber: "2"'></div>
                 </div>
-                <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title: "Middle"'>Middle</div>
+                <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title: "Middle"'>
+                    <div data-dojo-type='views/ValidationForm'></div>
+                </div>
                 <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title: "right"'>right</div>
             </div>
             <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'right'">

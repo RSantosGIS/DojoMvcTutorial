@@ -1,0 +1,17 @@
+<form data-dojo-attach-point="containerNode">
+    <div data-dojo-type='dojox/layout/TableContainer' data-dojo-props="cols: 1">
+        <input data-dojo-type="dijit/form/ValidationTextBox" title="First Name" name="firstName" 
+        data-dojo-props="required: true, invalidMessage: 'Enter First Name (Required)'"/>
+        <input data-dojo-type="dijit/form/ValidationTextBox" title="Last Name" name="lastName" 
+        data-dojo-props="required: true, invalidMessage: 'Enter First Name (Required)'"/>
+        <!-- validators allow you to check input against predefined validation params -->
+        <input data-dojo-type="dijit/form/ValidationTextBox" title="E-mail" name="email" 
+        data-dojo-props="validator: dojox.validate.isEmailAddress, invalidMessage: 'This is not a valid email!'"/>
+        <input data-dojo-type="dijit/form/ValidationTextBox" title="Age" name="age" 
+        data-dojo-props="validator: dojox.validate.isInRange, 
+        constraints: {min: 18, max: 130}, invalidMessage: 'This is not a valid age, 18-130!'"/>
+    </div>
+    
+    
+
+</form>
