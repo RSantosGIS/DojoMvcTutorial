@@ -15,7 +15,7 @@ define([
     _WidgetsInTemplateMixin, 
     template, 
 ) {
-    console.log("Template: " + template)
+    //console.log("Template: " + template)
     return declare([Form, _WidgetsInTemplateMixin], {
         templateString: template
     });

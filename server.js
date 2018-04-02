@@ -28,6 +28,10 @@ router.get("/lesson3", function(req, res) {
     res.sendFile(path+"indexLesson3.html");
 });
 
+router.get("/lesson5", function(req, res) {
+    res.sendFile(path+"indexLesson5.html");
+});
+
 app.use("/", router);
 
 //this is how you register additional static folders for files to be accessed from
