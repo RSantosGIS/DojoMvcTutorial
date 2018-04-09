@@ -8,6 +8,11 @@ define([
     'views/ProgrammaticValidationForm',
     'gridx/Grid',
     'stores/myStore',
+    'extended/dijit/form/ExtendedForm',
+    'dijit/form/TextBox',
+    'dijit/form/Button',
+    'dojox/layout/TableContainer',
+    'views/myView/Grid',
     'dojo/domReady!'
 ], function(
     declare,
@@ -18,8 +23,14 @@ define([
     TabContainer,
     ValidationForm,
     Grid,
-    myStore
+    myStore,
+    Form,
+    TextBox,
+    Button,
+    TableContainer,
+    MyViewGrid
 ) {
+    var form;
     return declare([
         BorderContainer
     ], {
@@ -75,15 +86,35 @@ define([
                     region: 'right',
                     title: 'right', content: 'Right'
                 }));   
-                    grid.addChild(new Grid({
-                        store: myStore,
-                        structure: [
-                            {field: 'id', name: 'Obj Identity'},
-                            {field: 'title', name: 'Song title'},
-                            {field: 'artist', name: 'Artist Name'},
-                        ]
-    
+                    grid.addChild(new MyViewGrid());
+                    formTable = new TableContainer({
+
+                    });
+                    form = new Form({
+                        
+                    });
+                    form.addChild(new TextBox({
+                        label: 'id',
+                        name: 'id'
                     }));
+                    form.addChild(new TextBox({
+                        label: 'title',
+                        name: 'title'
+                    }));
+                    form.addChild(new TextBox({
+                        label: 'artist',
+                        name: 'artist'
+                    }));
+                    form.addChild(new Button({
+                        label: 'Save',
+                        onClick: function(event) {
+                            debugger;
+                            var value = form.get('value');
+                        myStore.put(value);
+                        }
+                    }));
+                    formTable.addChild(form);
+                    grid.addChild(formTable);
                 tc.addChild(grid);
             this.addChild(tc);
 
