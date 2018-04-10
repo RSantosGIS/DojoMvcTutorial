@@ -85,7 +85,7 @@ define([
                 //right tab
                 var grid = (new ContentPane({
                     region: 'right',
-                    title: 'right', content: 'Right'
+                    title: 'right', content: 'Click the top grid to choose a row to edit.  Changes will appear on both'
                 }));   
                     grid.addChild(new MyViewGrid({id: 'myViewGrid'}));
                     formTable = new TableContainer({
@@ -108,13 +108,11 @@ define([
                     }));
                     form.addChild(new Button({
                         label: 'Save',
-                        // onClick: function(event) {
-                        //     var value = form.get('value');
-                        // myStore.put(value);
-                        // }
                     }));
                     formTable.addChild(form);
                     grid.addChild(formTable);
+                    //this grid will mirror the changes to the top one
+                    grid.addChild(new MyViewGrid({id: 'myViewGrid2'}));
                 tc.addChild(grid);
             this.addChild(tc);
 
