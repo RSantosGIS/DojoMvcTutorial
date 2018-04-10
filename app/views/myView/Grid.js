@@ -11,7 +11,7 @@ define ([
             SelectRow
         ],
         onRowClick: function(event) {
-            form.set('value', myStore.get(event.rowId));
+            //form.set('value', myStore.get(event.rowId));
         },
         structure: [
             {field: 'id', name: 'Obj Identity'},

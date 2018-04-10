@@ -13,6 +13,7 @@ define([
     'dijit/form/Button',
     'dojox/layout/TableContainer',
     'views/myView/Grid',
+    'controllers/myViewController',
     'dojo/domReady!'
 ], function(
     declare,
@@ -28,7 +29,7 @@ define([
     TextBox,
     Button,
     TableContainer,
-    MyViewGrid
+    MyViewGrid,
 ) {
     var form;
     return declare([
@@ -86,12 +87,12 @@ define([
                     region: 'right',
                     title: 'right', content: 'Right'
                 }));   
-                    grid.addChild(new MyViewGrid());
+                    grid.addChild(new MyViewGrid({id: 'myViewGrid'}));
                     formTable = new TableContainer({
 
                     });
                     form = new Form({
-                        
+                        id: 'myViewForm'
                     });
                     form.addChild(new TextBox({
                         label: 'id',
@@ -107,11 +108,10 @@ define([
                     }));
                     form.addChild(new Button({
                         label: 'Save',
-                        onClick: function(event) {
-                            debugger;
-                            var value = form.get('value');
-                        myStore.put(value);
-                        }
+                        // onClick: function(event) {
+                        //     var value = form.get('value');
+                        // myStore.put(value);
+                        // }
                     }));
                     formTable.addChild(form);
                     grid.addChild(formTable);
